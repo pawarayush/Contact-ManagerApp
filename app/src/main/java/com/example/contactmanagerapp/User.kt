@@ -1,3 +1,3 @@
 package com.example.contactmanagerapp
 
-data class User(val UniqueId:String,val passsword:String,val Email:String)
+data class User(val name:String, val phoneNumber:String)

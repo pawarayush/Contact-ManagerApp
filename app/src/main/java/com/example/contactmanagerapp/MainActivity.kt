@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
                     auth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(this) {
                            if (it.isSuccessful)  {
+                               Toast.makeText(this, "Account created success fully", Toast.LENGTH_SHORT).show()
                                 val intent1 = Intent(this, LoginActivity::class.java)
                                 startActivity(intent1)
                             }

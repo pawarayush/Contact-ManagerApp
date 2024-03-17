@@ -18,10 +18,10 @@ class splashactivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        supportActionBar?.hide()
-        Handler().postDelayed({
-            val intent = Intent(this,MainActivity::class.java)
-            startActivity(intent)
-        },3000)
+//        supportActionBar?.hide()
+//        Handler().postDelayed({
+//            val intent = Intent(this,MainActivity::class.java)
+//            startActivity(intent)
+//        },3000)
     }
 }

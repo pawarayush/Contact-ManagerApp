@@ -44,7 +44,7 @@
             android:layout_weight="1"
             android:backgroundTint="#FF0000"
             android:layout_margin="10dp"
-            android:text="CANCEL" />
+            android:text="Leave The App" />
 
         <Button
             android:id="@+id/btnok"
@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="#059142"
-            android:text="OK" />
+            android:text="Add More" />
     </LinearLayout>
 
 
