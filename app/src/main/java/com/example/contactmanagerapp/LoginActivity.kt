@@ -1,7 +1,9 @@
 package com.example.contactmanagerapp
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -20,13 +22,20 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
     lateinit var binding: ActivityLoginBinding
+    lateinit var progress: ProgressBar
 
+
+
+
+    @SuppressLint("SuspiciousIndentation")
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
 
 //        firebaseAuth = FirebaseAuth.getInstance()
         auth = Firebase.auth
+
 
 
         enableEdgeToEdge()
@@ -37,6 +46,9 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
 
+
+
+
         binding.regester.setOnClickListener{
             val main = Intent(this,MainActivity::class.java)
             startActivity(main)
@@ -45,6 +57,9 @@ class LoginActivity : AppCompatActivity() {
         binding.btnlogin.setOnClickListener{
             val email = binding.ltemail.text.toString()
             val password = binding.ltPass.text.toString()
+          binding.progressBar2.visibility= ProgressBar.VISIBLE
+
+
 
 
 
@@ -54,7 +69,9 @@ class LoginActivity : AppCompatActivity() {
                     .addOnCompleteListener(this){
                     if(it.isSuccessful){
                         val intent = Intent(this,HomeActivity::class.java)
+
                         startActivity(intent)
+                        binding.progressBar2.visibility=ProgressBar.GONE
                     }
                     else{
                         Toast.makeText(this, "inc", Toast.LENGTH_SHORT).show()
@@ -64,6 +81,7 @@ class LoginActivity : AppCompatActivity() {
 
 
             } else {
+                binding.progressBar2.visibility=ProgressBar.GONE
                 Toast.makeText(this, "Empty Fields are Note allowed", Toast.LENGTH_SHORT).show()
 
             }

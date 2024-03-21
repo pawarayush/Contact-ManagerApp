@@ -6,6 +6,7 @@ import android.content.Intent
 import android.os.Binder
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
 
     private lateinit var binding: ActivityMainBinding
+
+    lateinit var process: ProgressBar
 //    private lateinit var firebaseAuth: FirebaseAuth
 
     lateinit var dialog: Dialog
@@ -56,11 +59,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btnSignUP.setOnClickListener {
+            binding.progressBar.visibility=ProgressBar.VISIBLE
 
 
             val email = binding.etEmail.text.toString()
             val password = binding.etPass.text.toString()
             val Cpassword = binding.etCPass.text.toString()
+
 
 
             if (email.isNotEmpty() && password.isNotEmpty()) {
@@ -72,6 +77,7 @@ class MainActivity : AppCompatActivity() {
                                Toast.makeText(this, "Account created success fully", Toast.LENGTH_SHORT).show()
                                 val intent1 = Intent(this, LoginActivity::class.java)
                                 startActivity(intent1)
+                               binding.progressBar.visibility=ProgressBar.GONE
                             }
                         }
 
@@ -81,6 +87,7 @@ class MainActivity : AppCompatActivity() {
                 }
 
             } else {
+                binding.progressBar.visibility=ProgressBar.GONE
                 Toast.makeText(this, "Empty Fields are Note allowed", Toast.LENGTH_SHORT).show()
 
             }

@@ -18,6 +18,7 @@ class HomeActivity : AppCompatActivity() {
     lateinit var binding: ActivityHomeBinding
     lateinit var dialog: Dialog
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
