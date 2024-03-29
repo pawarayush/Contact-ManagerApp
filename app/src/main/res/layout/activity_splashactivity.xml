@@ -7,10 +7,12 @@
     android:layout_height="match_parent"
     tools:context=".splashactivity">
 
-    <ImageView
-        android:id="@+id/imageView2"
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animationView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/signin"
         android:layout_gravity="center"
-        app:srcCompat="@drawable/google_contacts_logo" />
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"/>
 </LinearLayout>
