@@ -4,6 +4,8 @@ plugins {
     id("com.google.gms.google-services")
 }
 
+
+
 android {
     namespace = "com.example.contactmanagerapp"
     compileSdk = 34
@@ -27,6 +29,7 @@ android {
             )
         }
     }
+
     buildFeatures{
         viewBinding = true
     }
@@ -52,4 +55,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation ("com.airbnb.android:lottie:3.4.0")
+
+
 }
